@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+  <div class="container m-t-20">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="container text-center">
+          <img class="img-fluid" style="width: 100px;" src="https://freepngimg.com/thumb/padlock/3-2-padlock-png-pic.png">
+        </div>
+        <h1 class="text-center">Login form</h1>
+        <!--Angular Material form-->
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field class="full-width">
+            <mat-label>UserName</mat-label>
+            <input type="text" [(ngModel)]="credentials.username" name="username" required matInput>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" [(ngModel)]="credentials.password" name="username" required matInput>
+          </mat-form-field>
+          <div class="container text-center">
+            <button type="submit" mat-raised-button color="primary">Login</button>
+            <button style="margin-left: 10px;" type="reset" mat-raised-button color="accent">Reset</button>
+          </div>
+        </form>
+        <br><br>
+        <p class="m-t-20">{{credentials | json}}</p>
+      </div>
+    </div>
+  </div>
+</div>
